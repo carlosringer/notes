@@ -1,0 +1,151 @@
+{
+    "questionnaireType": "SUMMARY_TEST_v1",
+    "version": 1.0,
+    "questionnaireTemplateData": {
+        "keys": {
+            "loanNumber": "string"
+        },
+        "initialSectionId": "SEC1",
+        "sections": [
+            {
+                "sectionName": "Contact",
+                "sectionId": "XXX-YYY-ZZZ",
+                "actions": [
+                    {
+                        "name": "route-to-summary",
+                        "type": "RouteNext",
+                        "value": "V2"
+                    },
+                    {
+                        "name": "route-to-finish",
+                        "type": "RouteNext",
+                        "value": "V3"
+                    }
+                ],
+                "initialViewId": "V1",
+                "views": [
+                    {
+                        "viewType": "QuestionAnswer",
+                        "viewId": "V1",
+                        "titleText": "How much do you spend on household expenses?",
+                        "questions": [
+                            {
+                                "keyName": "GROCERIES",
+                                "text": "Groceries",
+                                "type": "Money",
+                                "order": 0,
+                                "required": false,
+                                "groupName": "HOUSING",
+                                "placeholder": "0.00"
+                            },
+                            {
+                                "keyName": "LIQUOR",
+                                "text": "Liquor",
+                                "type": "Money",
+                                "order": 0,
+                                "required": false,
+                                "groupName": "HOUSING",
+                                "placeholder": "0.00"
+                            },
+                            {
+                                "keyName": "BEER",
+                                "text": "Beer",
+                                "type": "Money",
+                                "order": 0,
+                                "required": false,
+                                "groupName": "HOUSING",
+                                "placeholder": "0.00"
+                            },
+                            {
+                                "keyName": "CLAWS",
+                                "text": "Claws",
+                                "type": "Money",
+                                "order": 0,
+                                "required": true,
+                                "groupName": "HOUSING",
+                                "placeholder": "0.00"
+                            }
+                        ],
+                        "conditions": [
+                            {
+                                "order": 0,
+                                "logic": "{ \"==\" : [1, 1] }",
+                                "actionNames": [
+                                    "route-to-summary"
+                                ]
+                            }
+                        ],
+                        "variables": [],
+                        "nextButton": {
+                            "text": "Next",
+                            "type": "primary",
+                            "disabled": false
+                        }
+                    },
+                    {
+                        "viewType": "Summary",
+                        "viewId": "V2",
+                        "titleText": "This is a summary",
+                        "summaryItems": [
+                            {
+                                "value": "{{housingAmount}}",
+                                "modalViewId": "XXX-YYY-ZZZZ",
+                                "text": "Housing"
+                              }
+                        ],
+                        "conditions": [
+                            {
+                                "order": 0,
+                                "logic": "{ \"==\" : [1, 1] }",
+                                "actionNames": [
+                                    "route-to-finish"
+                                ]
+                            }
+                        ],
+                        "variables": [
+                            {
+                                "name": "housingAmount",
+                                "type": "value",
+                                "path": "idk"
+                            }
+                        ],
+                        "nextButton": {
+                            "text": "Next",
+                            "type": "primary",
+                            "disabled": false
+                        },
+                        "previousButton": {
+                            "text": "Previous",
+                            "type": "tertiary",
+                            "disabled": false
+                        }
+                    },
+                    {
+                        "viewType": "Interstitial",
+                        "viewId": "V3",
+                        "titleText": "You're done!",
+                        "subTitleText": "Good fuckin' job",
+                        "previousButton": {
+                            "text": "Previous",
+                            "type": "tertiary",
+                            "disabled": false
+                        }
+                    }
+                ],
+                "modalViews": [
+                    {
+                        "modalViewId": "XXX-YYY-ZZZZ",
+                        "titleText": "This is the title of the modal",
+                        "subTitleText": "This is the subtitle of the modal",
+                        "bodyText": "How about some text for the body of the modal?",
+                        "groups": [
+                            {
+                                "groupName": "HOUSING"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

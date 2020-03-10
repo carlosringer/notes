@@ -1,0 +1,68 @@
+{
+  "conditions": [
+    {
+      "order": 0,
+      "logic": "{ \"==\" : [1, 1] }",
+      "actionNames": [
+        "route-to-contact-method"
+      ]
+    }
+  ],
+  "viewType": "QuestionAnswer",
+  "viewId": "V1",
+  "questions": [
+    {
+      "keyName": "WHO_SPEAKING",
+      "type": "Radio",
+      "options": [
+        {
+          "selected": true,
+          "text": "Primary Client",
+          "value": "primary_client"
+        },
+        {
+          "selected": false,
+          "text": "Co-Client",
+          "value": "co_client"
+        },
+        {
+          "selected": false,
+          "text": "Authorized Third Party",
+          "value": "auth_third_party"
+        },
+        {
+          "selected": false,
+          "text": "Unauthorized Third Party",
+          "value": "unauth_third_party"
+        }
+      ],
+      "order": 0,
+      "required": true
+    }
+  ],
+  "titleText": "Who are we speaking to?",
+  "nextButton": {
+    "text": "Next",
+    "type": "primary",
+    "disabled": false
+  },
+  "stepper": [
+    {
+      "name": "Contact",
+      "isCompleted": false
+    },
+    {
+      "name": "Reason",
+      "isCompleted": false
+    },
+    {
+      "name": "Property",
+      "isCompleted": false
+    },
+    {
+      "name": "Summary",
+      "isCompleted": false
+    }
+  ],
+  "progressPercentage": 0
+}

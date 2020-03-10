@@ -1,0 +1,155 @@
+{
+  "questionnaireType": "string",
+  "version": 0,
+  "questionnaireTemplateData": {
+    "initialSectionId": "string",
+    "sections": [
+      {
+        "sectionId": "string",
+        "sectionName": "string",
+        "actions": [
+          {
+            "name": "string",
+            "type": "string",
+            "value": "string"
+          }
+        ],
+        "initialViewId": "string",
+        "views": [
+          {
+            "conditions": [
+              {
+                "order": 0,
+                "logic": "string",
+                "actionNames": [
+                  "string"
+                ],
+                "elseActionNames": [
+                  "string"
+                ]
+              }
+            ],
+            "replacements": [
+              {
+                "token": "string",
+                "keyPath": "string"
+              }
+            ],
+            "viewType": "string",
+            "viewId": "string",
+            "questions": [
+              {
+                "keyName": "string",
+                "text": "string",
+                "placeholder": "string",
+                "type": "Date",
+                "groupName": "string",
+                "options": [
+                  {
+                    "selected": true,
+                    "text": "string",
+                    "value": "string"
+                  }
+                ],
+                "order": 0,
+                "required": true,
+                "value": "string",
+                "formulaDetails": {
+                  "fields": [
+                    {
+                      "questionCode": "string",
+                      "readonly": true,
+                      "value": "string"
+                    }
+                  ],
+                  "formula": "string",
+                  "orientation": "Vertical"
+                }
+              }
+            ],
+            "summaryItems": [
+              {
+                "value": "string",
+                "modalViewId": "string",
+                "text": "string"
+              }
+            ],
+            "bodyText": "string",
+            "imgHref": "string",
+            "titleText": "string",
+            "subTitleText": "string",
+            "helpSection": {
+              "header": "string",
+              "faQs": [
+                {
+                  "question": "string",
+                  "answer": "string"
+                }
+              ],
+              "links": [
+                {
+                  "url": "string",
+                  "title": "string",
+                  "image": "string"
+                }
+              ]
+            },
+            "nextButton": {
+              "text": "string",
+              "type": "string",
+              "disabled": true
+            },
+            "previousButton": {
+              "text": "string",
+              "type": "string",
+              "disabled": true
+            },
+            "stepper": {
+              "additionalProp1": true,
+              "additionalProp2": true,
+              "additionalProp3": true
+            },
+            "progressPercentage": 0
+          }
+        ],
+        "modalViews": [
+          {
+            "modalViewId": "string",
+            "titleText": "string",
+            "subTitleText": "string",
+            "bodyText": "string",
+            "imgHref": "string",
+            "groups": [
+              {
+                "groupName": "string",
+                "keyNames": [
+                  "string"
+                ]
+              }
+            ]
+          }
+        ],
+        "variables": {
+          "additionalProp1": {
+            "type": "string",
+            "path": "string"
+          },
+          "additionalProp2": {
+            "type": "string",
+            "path": "string"
+          },
+          "additionalProp3": {
+            "type": "string",
+            "path": "string"
+          }
+        },
+        "sectionIncrementPercentage": 0
+      }
+    ],
+    "keys": {
+      "additionalProp1": "string",
+      "additionalProp2": "string",
+      "additionalProp3": "string"
+    }
+  }
+}

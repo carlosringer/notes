@@ -1,0 +1,68 @@
+{
+  "conditions": [
+    {
+      "order": 0,
+      "logic": "{ \"==\" : [1, 1] }",
+      "actionNames": [
+        "route-to-hardship-reason"
+      ]
+    }
+  ],
+  "viewType": "QuestionAnswer",
+  "viewId": "V2",
+  "questions": [
+    {
+      "keyName": "HOW_CONTACT",
+      "type": "Radio",
+      "options": [
+        {
+          "selected": true,
+          "text": "Home Phone",
+          "value": "home_phone"
+        },
+        {
+          "selected": false,
+          "text": "Cell Phone",
+          "value": "cell_phone"
+        },
+        {
+          "selected": false,
+          "text": "Carrier Pigeon",
+          "value": "pigeon"
+        }
+      ],
+      "order": 0,
+      "required": true
+    }
+  ],
+  "titleText": "How did the initial contact occur?",
+  "nextButton": {
+    "text": "Next",
+    "type": "primary",
+    "disabled": false
+  },
+  "previousButton": {
+    "text": "Previous",
+    "type": "tertiary",
+    "disabled": false
+  },
+  "stepper": [
+    {
+      "name": "Contact",
+      "isCompleted": false
+    },
+    {
+      "name": "Reason",
+      "isCompleted": false
+    },
+    {
+      "name": "Property",
+      "isCompleted": false
+    },
+    {
+      "name": "Summary",
+      "isCompleted": false
+    }
+  ],
+  "progressPercentage": 50.0
+}

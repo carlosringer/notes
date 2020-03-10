@@ -1,0 +1,23 @@
+{
+  "viewId": "idk",
+  "titleText": "Title of the View",
+  "subTitleText": "Sub-title of the rendered View",
+  "bodyText": "This is body text, which is usually longer, and it can explain more about the question to make the user more confident in their anwser.",
+  "questions": [
+    {
+      "titleText": "Thanks for helping us understand your situation Next, we\"ll go through your income, expenses, and assets.",
+      "keyName": "interstitial",
+      "type": "Interstitial",
+      "bodyText": "Be as accurate as you can.  This could affect the outcome of your application",
+      "imageHref": "https://placekitten.com/150",
+      "helpSection": null,
+      "required": true
+    }
+  ],
+  "helpSection": "helpObj",
+  "nextButton": {
+      "text": "Forward",
+      "type": "primary",
+      "disabled": false
+  }
+}

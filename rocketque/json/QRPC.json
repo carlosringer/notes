@@ -1,0 +1,449 @@
+{
+  "questionnaireType": "QRPC",
+  "version": 0,
+  "questionnaireTemplateData": {
+      "initialSectionId": "XXX-YYY-ZZZ",
+      "sections": [
+          {
+              "sectionId": "XXX-YYY-ZZZ",
+              "sectionName": "Contact",
+              "actions": [
+                  {
+                      "name": "route-to-contact-method",
+                      "type": "RouteNext",
+                      "value": "V2"
+                  },
+                  {
+                      "name": "route-to-hardship-reason",
+                      "type": "RouteNext",
+                      "value": "V3"
+                  }
+              ],
+              "initialViewId": "V1",
+              "views": [
+                  {
+                      "conditions": [
+                          {
+                              "order": 0,
+                              "logic": "{ \"==\" : [1, 1] }",
+                              "actionNames": [
+                                  "route-to-contact-method"
+                              ]
+                          }
+                      ],
+                      "viewType": "QuestionAnswer",
+                      "viewId": "V1",
+                      "questions": [
+                          {
+                              "keyName": "WHO_SPEAKING",
+                              "type": "Radio",
+                              "options": [
+                                  {
+                                      "selected": true,
+                                      "text": "Primary Client",
+                                      "value": "primary_client"
+                                  },
+                                  {
+                                      "selected": false,
+                                      "text": "Co-Client",
+                                      "value": "co_client"
+                                  },
+                                  {
+                                      "selected": false,
+                                      "text": "Authorized Third Party",
+                                      "value": "auth_third_party"
+                                  },
+                                  {
+                                      "selected": false,
+                                      "text": "Unauthorized Third Party",
+                                      "value": "unauth_third_party"
+                                  }
+                              ],
+                              "order": 0,
+                              "required": true
+                          }
+                      ],
+                      "titleText": "Who are we speaking to?",
+                      "nextButton": {
+                          "text": "Next",
+                          "type": "primary",
+                          "disabled": false
+                      },
+                      "progressPercentage": 0.0
+                  },
+                  {
+                      "conditions": [
+                          {
+                              "order": 0,
+                              "logic": "{ \"==\" : [1, 1] }",
+                              "actionNames": [
+                                  "route-to-hardship-reason"
+                              ]
+                          }
+                      ],
+                      "viewType": "QuestionAnswer",
+                      "viewId": "V2",
+                      "questions": [
+                          {
+                              "keyName": "HOW_CONTACT",
+                              "type": "Radio",
+                              "options": [
+                                  {
+                                      "selected": true,
+                                      "text": "Home Phone",
+                                      "value": "home_phone"
+                                  },
+                                  {
+                                      "selected": false,
+                                      "text": "Cell Phone",
+                                      "value": "cell_phone"
+                                  },
+                                  {
+                                      "selected": false,
+                                      "text": "Carrier Pigeon",
+                                      "value": "pigeon"
+                                  }
+                              ],
+                              "order": 0,
+                              "required": true
+                          }
+                      ],
+                      "titleText": "How did the initial contact occur?",
+                      "nextButton": {
+                          "text": "Next",
+                          "type": "primary",
+                          "disabled": false
+                      },
+                      "previousButton": {
+                          "text": "Previous",
+                          "type": "tertiary",
+                          "disabled": false
+                      },
+                      "progressPercentage": 0.0
+                  }
+              ],
+              "variables": {
+                  "loanNumber": {
+                      "type": "key",
+                      "path": "loanNumber",
+                      "format": "None"
+                  }
+              },
+              "sectionIncrementPercentage": 0.0
+          },
+          {
+              "sectionId": "AAA-BBB-CCC",
+              "sectionName": "Reason",
+              "actions": [
+                  {
+                      "name": "route-to-property",
+                      "type": "RouteNext",
+                      "value": "V4"
+                  }
+              ],
+              "initialViewId": "V3",
+              "views": [
+                  {
+                      "conditions": [
+                          {
+                              "order": 0,
+                              "logic": "{ \"==\" : [1, 1] }",
+                              "actionNames": [
+                                  "route-to-property"
+                              ]
+                          }
+                      ],
+                      "viewType": "QuestionAnswer",
+                      "viewId": "V3",
+                      "questions": [
+                          {
+                              "keyName": "REASON_UNABLE_PAY",
+                              "type": "Radio",
+                              "options": [
+                                  {
+                                      "selected": false,
+                                      "text": "Death of Principal Client",
+                                      "value": "death_principal_client"
+                                  },
+                                  {
+                                      "selected": false,
+                                      "text": "Death of Client's Family Member",
+                                      "value": "death_family_member"
+                                  },
+                                  {
+                                      "selected": false,
+                                      "text": "Currently or Previously Unemployed",
+                                      "value": "unemployment"
+                                  }
+                              ],
+                              "order": 0,
+                              "required": true
+                          }
+                      ],
+                      "titleText": "What is the original reason the client is unable to pay?",
+                      "nextButton": {
+                          "text": "Next",
+                          "type": "primary",
+                          "disabled": false
+                      },
+                      "previousButton": {
+                          "text": "Previous",
+                          "type": "tertiary",
+                          "disabled": false
+                      },
+                      "progressPercentage": 0.0
+                  }
+              ],
+              "sectionIncrementPercentage": 0.0
+          },
+          {
+              "sectionId": "EEE-FFF-DDD",
+              "sectionName": "Property",
+              "actions": [
+                  {
+                      "name": "route-to-property-for-sale",
+                      "type": "RouteNext",
+                      "value": "V5"
+                  },
+                  {
+                      "name": "route-to-property-for-sale-by",
+                      "type": "RouteNext",
+                      "value": "V6"
+                  },
+                  {
+                      "name": "route-to-property-secured",
+                      "type": "RouteNext",
+                      "value": "V7"
+                  },
+                  {
+                      "name": "route-to-summary",
+                      "type": "RouteNext",
+                      "value": "V8"
+                  }
+              ],
+              "initialViewId": "V4",
+              "views": [
+                  {
+                      "conditions": [
+                          {
+                              "order": 0,
+                              "logic": "{ \"==\" : [1, 1] }",
+                              "actionNames": [
+                                  "route-to-property-for-sale"
+                              ]
+                          }
+                      ],
+                      "viewType": "QuestionAnswer",
+                      "viewId": "V4",
+                      "questions": [
+                          {
+                              "keyName": "PROPERTY_VACANT",
+                              "type": "Radio",
+                              "options": [
+                                  {
+                                      "selected": false,
+                                      "text": "Yes",
+                                      "value": "yes"
+                                  },
+                                  {
+                                      "selected": false,
+                                      "text": "No",
+                                      "value": "no"
+                                  }
+                              ],
+                              "order": 0,
+                              "required": true
+                          }
+                      ],
+                      "titleText": "Is the property vacant?",
+                      "nextButton": {
+                          "text": "Next",
+                          "type": "primary",
+                          "disabled": false
+                      },
+                      "previousButton": {
+                          "text": "Previous",
+                          "type": "tertiary",
+                          "disabled": false
+                      },
+                      "progressPercentage": 0.0
+                  },
+                  {
+                      "conditions": [
+                          {
+                              "order": 0,
+                              "logic": "{\"==\" : [ { \"var\" : \"propertyForSale\" }, \"yes\" ]}",
+                              "actionNames": [
+                                  "route-to-property-for-sale-by"
+                              ],
+                              "elseActionNames": [
+                                  "route-to-property-secured"
+                              ]
+                          }
+                      ],
+                      "viewType": "QuestionAnswer",
+                      "viewId": "V5",
+                      "questions": [
+                          {
+                              "keyName": "PROPERTY_FOR_SALE",
+                              "type": "Radio",
+                              "options": [
+                                  {
+                                      "selected": false,
+                                      "text": "Yes",
+                                      "value": "yes"
+                                  },
+                                  {
+                                      "selected": false,
+                                      "text": "No",
+                                      "value": "no"
+                                  }
+                              ],
+                              "order": 0,
+                              "required": true
+                          }
+                      ],
+                      "titleText": "Is the property for sale?",
+                      "nextButton": {
+                          "text": "Next",
+                          "type": "primary",
+                          "disabled": false
+                      },
+                      "previousButton": {
+                          "text": "Previous",
+                          "type": "tertiary",
+                          "disabled": false
+                      },
+                      "progressPercentage": 0.0
+                  },
+                  {
+                      "conditions": [
+                          {
+                              "order": 0,
+                              "logic": "{ \"==\" : [1, 1] }",
+                              "actionNames": [
+                                  "route-to-property-secured"
+                              ]
+                          }
+                      ],
+                      "viewType": "QuestionAnswer",
+                      "viewId": "V6",
+                      "questions": [
+                          {
+                              "keyName": "PROPERTY_FOR_SALE_BY",
+                              "type": "Radio",
+                              "options": [
+                                  {
+                                      "selected": false,
+                                      "text": "Client",
+                                      "value": "client"
+                                  },
+                                  {
+                                      "selected": false,
+                                      "text": "Realtor",
+                                      "value": "realtor"
+                                  }
+                              ],
+                              "order": 0,
+                              "required": true
+                          }
+                      ],
+                      "titleText": "Property for sale by?",
+                      "nextButton": {
+                          "text": "Next",
+                          "type": "primary",
+                          "disabled": false
+                      },
+                      "previousButton": {
+                          "text": "Previous",
+                          "type": "tertiary",
+                          "disabled": false
+                      },
+                      "progressPercentage": 0.0
+                  },
+                  {
+                      "conditions": [
+                          {
+                              "order": 0,
+                              "logic": "{ \"==\" : [1, 1] }",
+                              "actionNames": [
+                                  "route-to-summary"
+                              ]
+                          }
+                      ],
+                      "viewType": "QuestionAnswer",
+                      "viewId": "V7",
+                      "questions": [
+                          {
+                              "keyName": "PROPERTY_SECURED",
+                              "type": "Radio",
+                              "options": [
+                                  {
+                                      "selected": false,
+                                      "text": "Yes",
+                                      "value": "yes"
+                                  },
+                                  {
+                                      "selected": false,
+                                      "text": "No",
+                                      "value": "no"
+                                  }
+                              ],
+                              "order": 0,
+                              "required": true
+                          }
+                      ],
+                      "titleText": "Is the property secured?",
+                      "nextButton": {
+                          "text": "Next",
+                          "type": "primary",
+                          "disabled": false
+                      },
+                      "previousButton": {
+                          "text": "Previous",
+                          "type": "tertiary",
+                          "disabled": false
+                      },
+                      "progressPercentage": 0.0
+                  }
+              ],
+              "variables": {
+                  "propertyForSale": {
+                      "type": "questionAnswer",
+                      "path": "PROPERTY_FOR_SALE",
+                      "format": "None"
+                  }
+              },
+              "sectionIncrementPercentage": 0.0
+          },
+          {
+              "sectionId": "TTT-UUU-VVV",
+              "sectionName": "Summary",
+              "actions": [],
+              "initialViewId": "V8",
+              "views": [
+                  {
+                      "viewType": "Interstitial",
+                      "viewId": "V8",
+                      "imgHref": "https://s3.scoopwhoop.com/anj/looneytunes/727977346.jpg",
+                      "titleText": "You're done!",
+                      "subTitleText": "Good job! Thats all folks!",
+                      "previousButton": {
+                          "text": "Previous",
+                          "type": "tertiary",
+                          "disabled": false
+                      },
+                      "progressPercentage": 0.0
+                  }
+              ],
+              "sectionIncrementPercentage": 0.0
+          }
+      ],
+      "keys": {
+          "loanNumber": {
+              "required": true,
+              "type": "String"
+          }
+      }
+  }
+}
